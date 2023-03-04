@@ -47,7 +47,7 @@ public class EnemyDestruction : MonoBehaviour
 
     private void OnPlatformDestroyed(bool isDestroyed)
     {
-        //PlayVisualEffect();
+        PlayVisualEffect();
 
         CleanUp();
     }

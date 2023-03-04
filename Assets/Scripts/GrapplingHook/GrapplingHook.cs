@@ -20,9 +20,11 @@ public class GrapplingHook : MonoBehaviour
     private PhysicalObject _physicalObject;
     private RaycastHit _hit;
 
+    public static event Action<bool> HookCreated;
+
     public RaycastHit Hit => _hit;
 
-    public bool HasGrappled { get; private set; } = false;
+    public bool HasGrappled { get; private set; }
 
     private void Awake()
     {
@@ -37,7 +39,8 @@ public class GrapplingHook : MonoBehaviour
 
         if (_hit.collider != null)
         {
-            HasGrappled= true;
+            HasGrappled = true;
+            Debug.Log("Хук создан");
             _hookRenderer.DrawRope(_target);
             _hookTransform.position = _hit.point;
             _springJointController.StartIncreasingSpring(_springJoint);

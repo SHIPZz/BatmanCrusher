@@ -1,7 +1,5 @@
 using RayFire;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(RayfireRigid))]
@@ -13,7 +11,7 @@ public class CubeDestruction : MonoBehaviour
 
     private void Awake()
     {
-        _rayfireRigid= GetComponent<RayfireRigid>();
+        _rayfireRigid = GetComponent<RayfireRigid>();
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -9,7 +9,8 @@ public class PlayerInput : MonoBehaviour
     private Animator _animator;
     private PhysicalObject _physicalObject;
 
-    public static event Action<bool> MouseButtonDown;
+    public static event Action MouseButtonDown;
+    public static event Action MouseButtonUp;
 
     private void Awake()
     {
@@ -21,15 +22,16 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            //Debug.Log("Мышь нажата");
             _hook.CreateHook();
             _animator.enabled = false;
             _physicalObject.MakePhysical();
-            MouseButtonDown?.Invoke(true);
+            MouseButtonDown?.Invoke();
         }
         else if (Input.GetMouseButtonUp(0))
         {
             _hook.DisableHook();
-            MouseButtonDown?.Invoke(false);
+            MouseButtonUp?.Invoke();
         }
     }
 }

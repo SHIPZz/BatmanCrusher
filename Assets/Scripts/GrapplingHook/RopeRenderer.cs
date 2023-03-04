@@ -26,12 +26,6 @@ public class RopeRenderer : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(_hook.HasGrappled)
-            Debug.Log(_hook.HasGrappled.ToString());
-
-        if (!_hook.HasGrappled)
-            Debug.Log(_hook.HasGrappled.ToString());
-
         if (_hook.HasGrappled == true)
         {
             _currentHookPosition = _hand.position;
@@ -48,13 +42,15 @@ public class RopeRenderer : MonoBehaviour
 
     public void DrawRope()
     {
+        Debug.Log("Зашли в метод DrawRope");
+
         if (_lineRenderer.positionCount == 0)
         {
             _spring.ChangeVelocity();
             _lineRenderer.positionCount = _segmentsCount + 1;
         }
 
-        SetWidthRopeByDistance();
+        //SetWidthRopeByDistance();
 
         _spring.Change(Time.deltaTime);
 
@@ -80,7 +76,7 @@ public class RopeRenderer : MonoBehaviour
 
     private void CreateSegments(Vector3 direction, Vector3 hookPosition)
     {
-        for (var i = 0; i < _segmentsCount + 1; i++)
+        for (var i = 0; i < _segmentsCount+1; i++)
         {
             var delta = i / (float)_segmentsCount;
 
