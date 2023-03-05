@@ -22,7 +22,6 @@ public class PlayerInput : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Debug.Log("Мышь нажата");
             _hook.CreateHook();
             _animator.enabled = false;
             _physicalObject.MakePhysical();

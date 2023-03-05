@@ -14,7 +14,7 @@ public class EnemyDestruction : MonoBehaviour
     private readonly float _initalCameraZoom = 35;
     private readonly float _wantedCameraZoom = 60;
     private readonly float _wantedTimeScale = 0.2f;
-    private readonly float _duration = 1f;
+    private readonly float _duration = 1.5f;
 
     private RayfireRigid _rayfireRidig;
 

@@ -42,8 +42,6 @@ public class RopeRenderer : MonoBehaviour
 
     public void DrawRope()
     {
-        Debug.Log("Зашли в метод DrawRope");
-
         if (_lineRenderer.positionCount == 0)
         {
             _spring.ChangeVelocity();

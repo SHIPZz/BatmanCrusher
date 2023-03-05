@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowFps : MonoBehaviour
+public class Fps : MonoBehaviour
 {
     public static float fps;
 

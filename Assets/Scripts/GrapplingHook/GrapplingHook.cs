@@ -9,9 +9,10 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private Transform _hookTransform;
     [SerializeField] private Rigidbody _hook;
+    [SerializeField] private LayerMask _layerMask;
 
 
-    private readonly float _maxDistance = 30;
+    private readonly float _maxDistance = 40;
 
     private RopeRenderer ropeRenderer;
 
@@ -35,14 +36,16 @@ public class GrapplingHook : MonoBehaviour
 
     public void CreateHook()
     {
-        GetRaycastHit();
+        _hit = GetRaycastHit();
 
-        if (_hit.collider != null)
+        if (Hit.point == null)
+            return;
+
+        if (_hit.point != null)
         {
-            HasGrappled = true;
-            Debug.Log("Хук создан");
-            _hookRenderer.DrawRope(_target);
             _hookTransform.position = _hit.point;
+            HasGrappled = true;
+            _hookRenderer.DrawRope(_target);
             _springJointController.StartIncreasingSpring(_springJoint);
             _physicalObject.MakeNotPhysical();
         }
@@ -59,11 +62,11 @@ public class GrapplingHook : MonoBehaviour
     {
         Ray ray = _camera.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1));
 
-        if (Physics.Raycast(ray, out _hit, _maxDistance))
+        if (Physics.Raycast(ray, out RaycastHit hit, _maxDistance, _layerMask))
         {
-            _target = _hit.point;
+            _target = hit.point;
         }
 
-        return _hit;
+        return hit;
     }
 }
