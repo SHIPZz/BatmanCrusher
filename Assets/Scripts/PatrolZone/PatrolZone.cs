@@ -7,19 +7,19 @@ public class PatrolZone : MonoBehaviour
     public event Action<Transform> TriggerEntered;
     public event Action<Transform> TriggerExited;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider player)
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
+        if (player.gameObject.CompareTag(EnemyDestruction.Player))
         {
-            TriggerEntered?.Invoke(other.transform);
+            TriggerEntered?.Invoke(player.transform);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider player)
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
+        if (player.gameObject.CompareTag(EnemyDestruction.Player))
         {
-            TriggerExited?.Invoke(other.transform);
+            TriggerExited?.Invoke(player.transform);
         }
     }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IDistanceWeapon
 {
+    int Damage { get; }
     void Shoot(Vector3 target);
 
 }

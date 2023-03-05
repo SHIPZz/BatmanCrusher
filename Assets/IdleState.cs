@@ -20,7 +20,7 @@ public class IdleState : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetTrigger("IsAttacked");
+        
     }
 
 
