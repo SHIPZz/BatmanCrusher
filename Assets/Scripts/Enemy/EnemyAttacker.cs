@@ -7,8 +7,9 @@ public abstract class EnemyAttacker : MonoBehaviour
 {
     [SerializeField] protected float Speed;
     [SerializeField] protected Animator Animator;
+    [SerializeField] protected EnemyFollow EnemyFollow;
 
-    protected static int IsAttacked = Animator.StringToHash("IsAttacked");
+    protected static readonly int IsAttacked = Animator.StringToHash("IsAttacked");
 
     protected Transform Target;
 

@@ -6,6 +6,7 @@ public class SpiderAttacker : EnemyAttacker
 {
     public override void Attack(Transform target)
     {
+        EnemyFollow.Chase(target);
         Animator.SetBool(IsAttacked, true);
     }
 

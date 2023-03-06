@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using RayFire;
 using System.Collections;
 using UnityEngine;
@@ -27,4 +28,13 @@ public abstract class Enemy : MonoBehaviour
             yield return null;
         }
     }
+
+    //protected async void Rotate(Transform player)
+    //{
+    //    while (transform.rotation != player.transform.rotation)
+    //    {
+    //        TransformExtension.LookAtXZ(transform, player.transform.position, Speed * Time.deltaTime);
+    //        await UniTask.Yield();
+    //    }
+    //}
 }

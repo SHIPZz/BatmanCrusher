@@ -23,13 +23,14 @@ public class Spider : Enemy
         PatrolZone.TriggerExited -= StopAttack;
     }
 
-
     public override void Attack(Transform player)
     {
-        if(Rotation != null)
+        if (Rotation != null)
             StopCoroutine(Rotation);
 
         Rotation = StartCoroutine(RotateCoroutine(player));
+
+        //Rotate(player);
 
         _spiderAttacker.Attack(player);
     }
