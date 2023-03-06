@@ -5,7 +5,7 @@ using static ToonyColorsPro.ShaderGenerator.Enums;
 public class PatrolZone : MonoBehaviour
 {
     public event Action<Transform> TriggerEntered;
-    public event Action<Transform> TriggerExited;
+    public event Action TriggerExited;
 
     private void OnTriggerStay(Collider player)
     {
@@ -19,7 +19,7 @@ public class PatrolZone : MonoBehaviour
     {
         if (player.gameObject.CompareTag(EnemyDestruction.Player))
         {
-            TriggerExited?.Invoke(player.transform);
+            TriggerExited?.Invoke();
         }
     }
 

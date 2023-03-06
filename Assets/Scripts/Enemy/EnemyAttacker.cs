@@ -3,44 +3,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttacker : MonoBehaviour
+public abstract class EnemyAttacker : MonoBehaviour
 {
-    [SerializeField] private float _speed = 100;
-    [SerializeField] private Bow _bow;
+    [SerializeField] protected float Speed;
+    [SerializeField] protected Animator Animator;
 
-    public event Action AnimationEnded;
+    protected static int IsAttacked = Animator.StringToHash("IsAttacked");
 
-    private static int _isAttacked = Animator.StringToHash("IsAttacked");
+    protected Transform Target;
 
-    private Transform _target;
-    private Animator _animator;
+    public abstract void Attack(Transform target);
 
-    private void Awake()
-    {
-        _animator= GetComponent<Animator>();
-    }
+    public abstract void StopAttack();
 
-    public void Attack(Transform target)
-    {
-        _target= target;
-        _animator.SetBool(_isAttacked, true);
-    }
-
-    public void OnBowAnimated()
-    {
-        if (_target == null)
-            return;
-
-        _bow.Shoot(_target.position);
-    }
-
-    public void OnAnimationEnded()
-    {
-        AnimationEnded?.Invoke();
-    }
-
-    public void StopAttack()
-    {
-        _animator.SetBool(_isAttacked, false);
-    }
 }
+
+//class SkeletonAttacker : EnemyAttacker
+//{
+//    [SerializeField] private Bow _bow;
+
+//    public override void Attack(Transform target)
+//    {
+//        Target = target;
+//        Animator.SetBool(IsAttacked, true);
+//    }
+
+//    public void OnBowAnimated()
+//    {
+//        if (Target == null)
+//            return;
+
+//        _bow.Shoot(Target.position);
+//    }
+
+//    public override void StopAttack()
+//    {
+//        Animator.SetBool(IsAttacked, false);
+//    }
+//}
+
+//class GolemAttacker : EnemyAttacker
+//{
+//    private void Awake()
+//    {
+//        Animator= GetComponent<Animator>();
+//    }
+
+//    public override void Attack(Transform target)
+//    {
+//        transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+//        Animator.SetBool(IsAttacked, true); 
+//    }
+
+//    public override void StopAttack()
+//    {
+//        Animator.SetBool(IsAttacked, false);
+//    }
+//}

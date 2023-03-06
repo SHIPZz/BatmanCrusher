@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-        _player = FindObjectOfType<Player>();
+
         _bulletMovement = GetComponent<BulletMovement>();
     }
 
