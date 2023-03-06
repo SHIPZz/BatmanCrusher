@@ -28,33 +28,3 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 }
-
-//class Skeleton : Enemy
-//{
-//    [SerializeField] private SkeletonAttacker _skeletonAttacker;
-
-//    public override void Attack(Transform player)
-//    {
-//        _skeletonAttacker.Attack(player);
-//    }
-
-//    public override void StopAttack(Transform player)
-//    {
-//        _skeletonAttacker.StopAttack();
-//    }
-//}
-
-//class Goleem : Enemy
-//{
-//    [SerializeField] private GolemAttacker _golemAttacker;
-
-//    public override void Attack(Transform player)
-//    {
-//        _golemAttacker.Attack(player);
-//    }
-
-//    public override void StopAttack(Transform player)
-//    {
-//        _golemAttacker.StopAttack();
-//    }
-//}
