@@ -1,4 +1,6 @@
 using RayFire;
+using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(RayfireRigid))]
@@ -8,37 +10,33 @@ public class EnemyDestruction : MonoBehaviour
 
     [SerializeField] private ParticleSystem _explosionEffect;
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private CubeDestruction _platfromForObject;
+    //[SerializeField] private CubeDestruction _platfromForObject;
 
-    private readonly float _delay = 0.5f;
+    public event Action Destroyed;
+
+    private readonly float _delay = 1f;
     private readonly float _initalCameraZoom = 35;
     private readonly float _wantedCameraZoom = 60;
     private readonly float _wantedTimeScale = 0.2f;
-    private readonly float _duration = 1.5f;
+    private readonly float _duration = 3f;
 
-    private RayfireRigid _rayfireRidig;
+    private Coroutine _delayCoroutine;
+    private RayfireRigid _rayfireRigid;
+    private BoxCollider _collider;
 
     private void Awake()
     {
-        _rayfireRidig = GetComponent<RayfireRigid>();
+        _rayfireRigid = GetComponent<RayfireRigid>();
         _explosionEffect.gameObject.SetActive(false);
         _audioSource.gameObject.SetActive(false);
+        _collider = GetComponent<BoxCollider>();
     }
 
-    private void OnEnable()
+    private void OnTriggerEnter(Collider other)
     {
-        _platfromForObject.PlatformDestroyed += OnPlatformDestroyed;
-    }
-
-    private void OnDisable()
-    {
-        _platfromForObject.PlatformDestroyed -= OnPlatformDestroyed;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(Player))
+        if (other.gameObject.CompareTag(Player))
         {
+            _collider.enabled = false;
             PlayVisualEffect();
 
             CleanUp();
@@ -48,27 +46,34 @@ public class EnemyDestruction : MonoBehaviour
     private void OnPlatformDestroyed(bool isDestroyed)
     {
         PlayVisualEffect();
-
-        CleanUp();
     }
 
     private void CleanUp()
     {
-        Destroy(_explosionEffect.gameObject, _delay);
-        Destroy(_audioSource.gameObject, _delay);
+        if (_delayCoroutine != null)
+            StopCoroutine(_delayCoroutine);
 
-        _rayfireRidig.Demolish();
+        _delayCoroutine = StartCoroutine(MakeDelay());
+    }
+
+    private IEnumerator MakeDelay()
+    {
+        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
+        _rayfireRigid.Demolish();
+
+        yield return null;
     }
 
     private void PlayVisualEffect()
     {
-        CameraScale.Instance.StartZoom(_initalCameraZoom, _wantedCameraZoom);
-        GlobalSlowMotionSystem.Instance.StartSlowMotion(_wantedTimeScale, _duration, 0);
-
         _explosionEffect.gameObject.SetActive(true);
         _audioSource.gameObject.SetActive(true);
 
-        _explosionEffect.Play();
+        CameraScale.Instance.StartZoom(_initalCameraZoom, _wantedCameraZoom);
+        GlobalSlowMotionSystem.Instance.StartSlowMotion(_wantedTimeScale, _duration, 0);
+
         _audioSource.Play();
+        _explosionEffect.Play();
     }
 }

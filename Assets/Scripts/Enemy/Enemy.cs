@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private PatrolZone _patrolZone;
     [SerializeField] private Player _player;
     [SerializeField] private float _speed;
 
@@ -14,23 +13,25 @@ public class Enemy : MonoBehaviour
     private Health _health;
     private Coroutine _rotation;
     private RayfireRigid _rayfireRigid;
+    private EnemyFollow _enemyFollow;
 
     private void Awake()
     {
         _rayfireRigid= GetComponent<RayfireRigid>();
         _enemyAttacker = GetComponent<IEnemyAttacker>();
+        _enemyFollow = GetComponent<EnemyFollow>();
     }
 
     private void OnEnable()
     {
-        _patrolZone.TriggerEntered += Attack;
-        _patrolZone.TriggerExited += StopAttack;
+        _enemyFollow.TriggerEntered += Attack;
+        _enemyFollow.TriggerExited += StopAttack;
     }
 
     private void OnDisable()
     {
-        _patrolZone.TriggerEntered -= Attack;
-        _patrolZone.TriggerExited -= StopAttack;
+        _enemyFollow.TriggerEntered -= Attack;
+        _enemyFollow.TriggerExited -= StopAttack;
     }
 
     public void StopAttack()
@@ -40,21 +41,7 @@ public class Enemy : MonoBehaviour
 
     public void Attack(Transform player)
     {
-        if (_rotation != null)
-            StopCoroutine(_rotation);
-
-        _rotation = StartCoroutine(RotateCoroutine(player));
-
         _enemyAttacker.Attack(player);
-    }
-
-    protected IEnumerator RotateCoroutine(Transform player)
-    {
-        while (transform.rotation != player.transform.rotation)
-        {
-            TransformExtension.LookAtXZ(transform, player.transform.position, _speed * Time.deltaTime);
-            yield return null;
-        }
     }
 
     //protected async void Rotate(Transform player)

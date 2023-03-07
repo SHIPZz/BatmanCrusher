@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(RayfireRigid))]
 public class CubeDestruction : MonoBehaviour
 {
+    //[SerializeField] private EnemyDestruction _enemy;
+
     private RayfireRigid _rayfireRigid;
 
     public event Action<bool> PlatformDestroyed;
@@ -14,9 +16,28 @@ public class CubeDestruction : MonoBehaviour
         _rayfireRigid = GetComponent<RayfireRigid>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    //private void OnEnable()
+    //{
+    //    _enemy.Destroyed += OnEnemyDestroyed;
+    //}
+
+    //private void OnDisable()
+    //{
+    //    _enemy.Destroyed -= OnEnemyDestroyed;
+    //}
+
+    private void OnEnemyDestroyed()
     {
         _rayfireRigid.Demolish();
-        PlatformDestroyed?.Invoke(true);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag(EnemyDestruction.Player))
+        {
+            _rayfireRigid.Demolish();
+            PlatformDestroyed?.Invoke(true);
+        }
     }
 }
