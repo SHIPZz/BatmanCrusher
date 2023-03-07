@@ -1,24 +1,46 @@
-using Cysharp.Threading.Tasks;
 using RayFire;
 using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public abstract class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] protected PatrolZone PatrolZone;
     [SerializeField] protected Player Player;
     [SerializeField] protected float Speed;
+    [SerializeField] protected EnemyAttacker EnemyAttacker;
 
-    protected EnemyAttacker _enemyAttacker;
     protected Health Health;
     protected Animator Animator;
     protected Coroutine Rotation;
     protected RayfireRigid RayfireRigid;
 
-    public abstract void StopAttack();
+    private void OnEnable()
+    {
+        PatrolZone.TriggerEntered += Attack;
+        PatrolZone.TriggerExited += StopAttack;
+    }
 
-    public abstract void Attack(Transform player);
+    private void OnDisable()
+    {
+        PatrolZone.TriggerEntered -= Attack;
+        PatrolZone.TriggerExited -= StopAttack;
+    }
+
+    public void StopAttack()
+    {
+        EnemyAttacker.StopAttack();
+    }
+
+    public void Attack(Transform player)
+    {
+        if (Rotation != null)
+            StopCoroutine(Rotation);
+
+        Rotation = StartCoroutine(RotateCoroutine(player));
+
+        EnemyAttacker.Attack(player);
+    }
 
     protected IEnumerator RotateCoroutine(Transform player)
     {
