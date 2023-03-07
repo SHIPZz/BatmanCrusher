@@ -8,12 +8,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected PatrolZone PatrolZone;
     [SerializeField] protected Player Player;
     [SerializeField] protected float Speed;
-    [SerializeField] protected EnemyAttacker EnemyAttacker;
+
+    private IEnemyAttacker _enemyAttacker;
 
     protected Health Health;
     protected Animator Animator;
     protected Coroutine Rotation;
     protected RayfireRigid RayfireRigid;
+
+    private void Awake()
+    {
+        _enemyAttacker = GetComponent<IEnemyAttacker>();
+    }
 
     private void OnEnable()
     {
@@ -29,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     public void StopAttack()
     {
-        EnemyAttacker.StopAttack();
+        _enemyAttacker.StopAttack();
     }
 
     public void Attack(Transform player)
@@ -39,7 +45,7 @@ public class Enemy : MonoBehaviour
 
         Rotation = StartCoroutine(RotateCoroutine(player));
 
-        EnemyAttacker.Attack(player);
+        _enemyAttacker.Attack(player);
     }
 
     protected IEnumerator RotateCoroutine(Transform player)

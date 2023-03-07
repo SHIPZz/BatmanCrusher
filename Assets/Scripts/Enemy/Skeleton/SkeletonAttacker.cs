@@ -1,31 +1,35 @@
 using UnityEngine;
 
-public class SkeletonAttacker : EnemyAttacker
+public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
 {
     [SerializeField] private Bow _bow;
 
+    private readonly static int _isAttacked = Animator.StringToHash("IsAttacked");
+    private Animator _animator;
+    private Transform _target;
+
     private void Awake()
     {
-        Animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
-    public override void Attack(Transform target)
+    public void Attack(Transform target)
     {
-        Target = target;
-        Animator.SetBool(IsAttacked, true);
+        _target = target;
+        _animator.SetBool(_isAttacked, true);
     }
 
     public void OnBowAnimated()
     {
-        if (Target == null)
+        if (_target == null)
             return;
 
-        _bow.Shoot(Target.position);
+        _bow.Shoot(_target.position);
     }
 
-    public override void StopAttack()
+    public void StopAttack()
     {
-        Animator.SetBool(IsAttacked, false);
+        _animator.SetBool(_isAttacked, false);
     }
 
 }

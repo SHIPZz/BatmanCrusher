@@ -1,21 +1,27 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyAttacker : MonoBehaviour
+[RequireComponent(typeof(EnemyFollow))]
+public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
 {
-    [SerializeField] protected float Speed;
-    [SerializeField] protected Animator Animator;
-    [SerializeField] protected EnemyFollow EnemyFollow;
+    protected static readonly int _isAttacked = Animator.StringToHash("IsAttacked");
 
-    protected static readonly int IsAttacked = Animator.StringToHash("IsAttacked");
+    private Animator _animator;
+    private EnemyFollow _enemyFollow;
 
-    protected Transform Target;
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _enemyFollow = GetComponent<EnemyFollow>();
+    }
 
-    public abstract void Attack(Transform target);
+    public void Attack(Transform target)
+    {
+        _enemyFollow.Chase(target);
+        _animator.SetBool(_isAttacked, true);
+    }
 
-    public abstract void StopAttack();
-
+    public void StopAttack()
+    {
+        _animator.SetBool(_isAttacked, false);
+    }
 }
-
