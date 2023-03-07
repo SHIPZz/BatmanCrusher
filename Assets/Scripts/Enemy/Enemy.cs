@@ -5,32 +5,32 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected PatrolZone PatrolZone;
-    [SerializeField] protected Player Player;
-    [SerializeField] protected float Speed;
+    [SerializeField] private PatrolZone _patrolZone;
+    [SerializeField] private Player _player;
+    [SerializeField] private float _speed;
 
     private IEnemyAttacker _enemyAttacker;
 
-    protected Health Health;
-    protected Animator Animator;
-    protected Coroutine Rotation;
-    protected RayfireRigid RayfireRigid;
+    private Health _health;
+    private Coroutine _rotation;
+    private RayfireRigid _rayfireRigid;
 
     private void Awake()
     {
+        _rayfireRigid= GetComponent<RayfireRigid>();
         _enemyAttacker = GetComponent<IEnemyAttacker>();
     }
 
     private void OnEnable()
     {
-        PatrolZone.TriggerEntered += Attack;
-        PatrolZone.TriggerExited += StopAttack;
+        _patrolZone.TriggerEntered += Attack;
+        _patrolZone.TriggerExited += StopAttack;
     }
 
     private void OnDisable()
     {
-        PatrolZone.TriggerEntered -= Attack;
-        PatrolZone.TriggerExited -= StopAttack;
+        _patrolZone.TriggerEntered -= Attack;
+        _patrolZone.TriggerExited -= StopAttack;
     }
 
     public void StopAttack()
@@ -40,10 +40,10 @@ public class Enemy : MonoBehaviour
 
     public void Attack(Transform player)
     {
-        if (Rotation != null)
-            StopCoroutine(Rotation);
+        if (_rotation != null)
+            StopCoroutine(_rotation);
 
-        Rotation = StartCoroutine(RotateCoroutine(player));
+        _rotation = StartCoroutine(RotateCoroutine(player));
 
         _enemyAttacker.Attack(player);
     }
@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour
     {
         while (transform.rotation != player.transform.rotation)
         {
-            TransformExtension.LookAtXZ(transform, player.transform.position, Speed * Time.deltaTime);
+            TransformExtension.LookAtXZ(transform, player.transform.position, _speed * Time.deltaTime);
             yield return null;
         }
     }

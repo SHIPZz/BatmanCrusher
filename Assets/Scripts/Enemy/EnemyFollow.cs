@@ -9,7 +9,7 @@ public class EnemyFollow : MonoBehaviour
 
     public void Chase(Transform target)
     {
-        _tween = transform.DOMove(target.position, 0.5f).SetAutoKill(false);
+        _tween = transform.DOMoveX(target.position.x, 0.5f).SetAutoKill(false);
         _lastPositionTarget = target.position;
 
         if (_lastPositionTarget != null)
