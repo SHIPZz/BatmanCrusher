@@ -10,9 +10,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] private Transform _hookTransform;
     [SerializeField] private Rigidbody _hook;
     [SerializeField] private LayerMask _layerMask;
-
-
-    private readonly float _maxDistance = 40;
+    [SerializeField] private float _maxDistance;
 
     private RopeRenderer ropeRenderer;
 
@@ -38,7 +36,7 @@ public class GrapplingHook : MonoBehaviour
     {
         _hit = GetRaycastHit();
 
-        if (Hit.point == null)
+        if (_hit.point == new Vector3(0, 0, 0))
             return;
 
         if (_hit.point != null)
