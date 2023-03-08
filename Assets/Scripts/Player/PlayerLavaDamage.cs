@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerLavaDamage : MonoBehaviour
 {
+    [SerializeField] private Lava _lava;
+
+    private readonly int _damage = 10;
     private Player _player;
 
     private void Awake()
@@ -13,16 +16,16 @@ public class PlayerLavaDamage : MonoBehaviour
 
     private void OnEnable()
     {
-        Lava.PlayerDown += OnPlayerDown;
+        _lava.PlayerDown += OnPlayerDown;
     }
 
     private void OnDisable()
     {
-        Lava.PlayerDown -= OnPlayerDown;
+        _lava.PlayerDown -= OnPlayerDown;
     }
 
     public void OnPlayerDown()
     {
-        _player.TakeDamage(10);
+        _player.TakeDamage(_damage);
     }
 }

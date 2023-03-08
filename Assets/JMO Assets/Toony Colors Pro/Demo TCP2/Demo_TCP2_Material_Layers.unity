@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 0dad96dccfd8a344492d4cd202ff059b, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.36622968, g: 0.5872805, b: 0.90893406, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -560,10 +560,10 @@ MonoBehaviour:
 
     - Ramp Smoothing (softer on the snow)
 
-    - Normal Map (Perlin
-    noise)
+    - Normal Map (Perlin noise)
 
-    - Normal Map Scale (to adjust normal scale per-texture)'
+    -
+    Normal Map Scale (to adjust normal scale per-texture)'
 --- !u!1 &240067738
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,8 +3273,8 @@ MonoBehaviour:
   textBox: {fileID: 2097451634}
   Text: '<b>Y Normal-based Snow Layer:</b>
 
-    All texels pointing up (Y) will
-    become snow.
+    All texels pointing up (Y) will become
+    snow.
 
     The noise texture and the contrast value help to
 

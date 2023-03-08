@@ -7,14 +7,14 @@ public class Health : MonoBehaviour
 
     public event Action<int> ValueChanged;
 
-    public event Action<int> ValueZeroReached;
+    public event Action ValueZeroReached;
 
     public void Decrease(int damage)
     {
         CurrentValue = Mathf.Clamp(CurrentValue - damage, 0, CurrentValue);
 
         if (CurrentValue == 0)
-            ValueZeroReached?.Invoke(CurrentValue);
+            ValueZeroReached?.Invoke();
 
         ValueChanged?.Invoke(CurrentValue);
     }

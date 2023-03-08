@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     private Health _health;
 
@@ -20,14 +20,9 @@ public class Player : MonoBehaviour
         _health.ValueZeroReached -= OnHealthZeroReached;
     }
 
-    private void OnHealthZeroReached(int health)
+    private void OnHealthZeroReached()
     {
         Destroy(gameObject);
-    }
-
-    public static void Damage()
-    {
-        print("damag");
     }
 
     public void TakeDamage(int damage)

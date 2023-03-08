@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    public static event Action PlayerDown;
+    public  event Action PlayerDown;
 
     private void OnTriggerStay(Collider other)
     {

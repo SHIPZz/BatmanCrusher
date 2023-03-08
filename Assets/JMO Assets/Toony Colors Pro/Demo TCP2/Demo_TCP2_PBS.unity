@@ -1582,7 +1582,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_UseStylizedSpecular
         m_Mode: 0
         m_Arguments:
@@ -1989,7 +1989,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_UseStylizedFresnel
         m_Mode: 0
         m_Arguments:
@@ -2767,7 +2767,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetSmoothness
         m_Mode: 0
         m_Arguments:
@@ -3271,7 +3271,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetRampThreshold
         m_Mode: 0
         m_Arguments:
@@ -3935,7 +3935,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetBumpScale
         m_Mode: 0
         m_Arguments:
@@ -4526,7 +4526,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_RotatePointLights
         m_Mode: 0
         m_Arguments:
@@ -5416,7 +5416,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetRampSmooth
         m_Mode: 0
         m_Arguments:
@@ -5626,7 +5626,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_UseRampTexture
         m_Mode: 0
         m_Arguments:
@@ -7976,7 +7976,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_ShowDirLight
         m_Mode: 0
         m_Arguments:
@@ -8252,7 +8252,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_ShowPointLights
         m_Mode: 0
         m_Arguments:
@@ -9217,7 +9217,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: set_UseOutline
         m_Mode: 0
         m_Arguments:
@@ -10072,7 +10072,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetRampSmoothAdd
         m_Mode: 0
         m_Arguments:
@@ -10251,7 +10251,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1376607986}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ToonyColorsPro.Demo.TCP2_Demo_PBS, ToonyColorsPro2.Demo
         m_MethodName: SetMetallic
         m_Mode: 0
         m_Arguments:

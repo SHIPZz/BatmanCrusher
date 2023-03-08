@@ -305,4 +305,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lava_Flowing_Shader/Scenes/FLowingLava.unity
     guid: 4b5197d2a37c07c4ea690670a25a282d
+  - enabled: 1
+    path: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Death_Baker.unity
+    guid: f590ae3f7b1aeff42968da89a0714ba3
+  - enabled: 1
+    path: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Death_Baker__Fall_.unity
+    guid: 57b70faf253ebdf41919c10d4ea94316
+  - enabled: 1
+    path: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/X_Boarding.unity
+    guid: 07d8f173befafeb4c8c48f32872aa4ba
+  - enabled: 1
+    path: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Death_Procedures.unity
+    guid: 32473da358af4b94ca488f7b446de5a3
+  - enabled: 1
+    path: Assets/InsaneSystems/HealthbarsKit/ExampleScene.unity
+    guid: 43e33fab20bdbad409ac8a0271cdde92
   m_configObjects: {}

@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EnemyFollow : MonoBehaviour
+public class EnemyFollowing : MonoBehaviour
 {
     [SerializeField] private PatrolZone _patzolZone;
     [SerializeField] private float _speed;
@@ -73,7 +73,7 @@ public class EnemyFollow : MonoBehaviour
 
     private void Chase(Transform target)
     {
-        _tween = transform.DOMove(target.position, 0.5f).SetAutoKill(false);
+        _tween = transform.DOMoveX(target.position.x, 0.5f).SetAutoKill(false);
         _lastPositionTarget = target.position;
 
         if (_lastPositionTarget != null)
