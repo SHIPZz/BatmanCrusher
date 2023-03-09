@@ -59,6 +59,7 @@ public class EnemyDestruction : MonoBehaviour
 
     public void TakeDamage(Transform target)
     {
+        print(_player.Damage);
         _health.TakeDamage(_player.Damage);
     }
 
