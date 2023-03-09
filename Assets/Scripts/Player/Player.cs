@@ -12,7 +12,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
-        _health.ValueZeroReached -= OnHealthZeroReached;
+        _health.ValueZeroReached += OnHealthZeroReached;
     }
 
     private void OnDisable()
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnHealthZeroReached()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)

@@ -13,7 +13,7 @@ public class EnemyFollowing : MonoBehaviour
     public event Action TriggerExited;
 
     private Vector3 _lastPositionTarget;
-
+    private static readonly int _isWalking = Animator.StringToHash("IsWalking");
     private Tweener _tween;
     private Animator _animator;
     private Transform _currentPosition;
@@ -37,10 +37,13 @@ public class EnemyFollowing : MonoBehaviour
         _patzolZone.TriggerExited -= OnTriggerExited;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag(EnemyDestruction.Player))
+        {
+            _animator.SetBool(_isWalking, false);
             TriggerEntered?.Invoke(other.transform);
+        }
     }
 
     private void OnTriggerExit(Collider other)

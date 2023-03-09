@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyFollowing), typeof(Animator))]
@@ -8,6 +10,7 @@ public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
     private static readonly int _isAttacked = Animator.StringToHash("IsAttacked");
     private static readonly int _isWalking = Animator.StringToHash("IsWalking");
 
+    private Coroutine _animation;
     private Animator _animator;
 
     private void Awake()
@@ -17,14 +20,33 @@ public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
 
     public void Attack(Transform target)
     {
-        _player.TakeDamage(10);
-        _animator.SetBool(_isWalking, false);
+        //if(_animation != null)
+        //    StopCoroutine(_animation);
+
+        //_animation = StartCoroutine(StartAnimation());
+
+
+        //_/*animator.SetBool(_isWalking, false);*/
         _animator.SetBool(_isAttacked, true);
+        //_player.TakeDamage(10);
     }
 
     public void StopAttack()
     {
-        _animator.SetBool(_isWalking, true);
+        //print("stop");
+        //_animator.SetBool(_isWalking, false);
         _animator.SetBool(_isAttacked, false);
     }
+
+    //private IEnumerator StartAnimation()
+    //{
+    //    //_animator.SetBool(_isWalking, false);
+    //    ////yield return new WaitForSeconds(1);
+    //    //yield return new WaitForSeconds(1);
+    //    //_animator.SetBool(_isAttacked, true);
+    //    //_player.TakeDamage(10);
+    //    //yield return new WaitForSeconds(1);
+    //    //_animator.SetBool(_isAttacked, false);
+
+    //}
 }

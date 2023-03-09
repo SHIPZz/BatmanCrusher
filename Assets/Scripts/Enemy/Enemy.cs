@@ -2,7 +2,7 @@ using RayFire;
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Health), typeof(RayfireRigid), typeof(IEnemyAttacker))]
+[RequireComponent(typeof(Health), typeof(RayfireRigid), typeof(EnemyAttacker))]
 public class Enemy : MonoBehaviour, IDamageable
 {
     [SerializeField] private Player _player;
@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private Health _health;
     private Coroutine _rotation;
+    private Coroutine _start;
     private RayfireRigid _rayfireRigid;
     private EnemyFollowing _enemyFollow;
 
@@ -47,6 +48,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Attack(Transform player)
     {
+        //if(_start!=null)
+        //    StopCoroutine(StartTest(player));
+
+        //_start = StartCoroutine(StartTest(player));
+
         _enemyAttacker.Attack(player);
     }
 
