@@ -3,22 +3,20 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(DistanceChecker), typeof(EnemyAnimator))]
 public class EnemyFollowing : MonoBehaviour
 {
-    [SerializeField] private PatrolZone _patzolZone;
     [SerializeField] private float _speed;
 
     private Vector3 _lastPositionTarget;
     private Tweener _tween;
     private Transform _currentPosition;
     private Coroutine _rotation;
-    private DistanceChecker _distanceChecker;
     private EnemyAnimator _enemyAnimator;
 
     private void Awake()
     {
         _currentPosition = transform;
-        _distanceChecker = GetComponent<DistanceChecker>(); 
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 

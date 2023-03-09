@@ -1,5 +1,5 @@
 using UnityEngine;
-
+[RequireComponent(typeof(DistanceChecker), typeof(EnemyFollowing), typeof(EnemyAttacker))]
 public class EnemyStateController : MonoBehaviour
 {
     [SerializeField] private PatrolZone _patrolZone;

@@ -124576,6 +124576,7 @@ GameObject:
   - component: {fileID: 6917280799097954429}
   - component: {fileID: 6917280799097954430}
   - component: {fileID: 6917280799097954431}
+  - component: {fileID: 6917280799097954432}
   m_Layer: 13
   m_Name: Spider
   m_TagString: Untagged
@@ -125594,6 +125595,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _patrolZone: {fileID: 439397977}
+--- !u!114 &6917280799097954432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103730514264160969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _explosionEffect: {fileID: 731850602}
+  _audioSource: {fileID: 718123406}
 --- !u!1 &6931258103261025343
 GameObject:
   m_ObjectHideFlags: 0

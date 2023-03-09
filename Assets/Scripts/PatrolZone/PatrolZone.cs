@@ -7,7 +7,7 @@ public class PatrolZone : MonoBehaviour
 
     public event Action TriggerExited;
 
-    private void OnTriggerStay(Collider player)
+    private void OnTriggerEnter(Collider player)
     {
         TriggerEntered?.Invoke(player.transform);
     }

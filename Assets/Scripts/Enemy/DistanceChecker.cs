@@ -6,17 +6,14 @@ public class DistanceChecker : MonoBehaviour
     public event Action PlayerApproached;
     public event Action PlayerExited;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
-        {
-            PlayerApproached?.Invoke();
-        }
+        PlayerApproached?.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
-            PlayerExited?.Invoke();
+        PlayerApproached?.Invoke();
+        PlayerExited?.Invoke();
     }
 }
