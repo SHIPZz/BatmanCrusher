@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(RayfireRigid))]
-public class EnemyDestruction : MonoBehaviour
+public class EnemyDestruction : MonoBehaviour, IDamageable
 {
     public const string Player = "Player";
 
@@ -42,7 +42,10 @@ public class EnemyDestruction : MonoBehaviour
         }
     }
 
-
+    public void TakeDamage(int damage)
+    {
+        throw new NotImplementedException();
+    }
 
 
     private void OnPlatformDestroyed(bool isDestroyed)

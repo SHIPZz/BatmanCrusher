@@ -20,22 +20,9 @@ public class EnemyAttacker : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    private void OnEnable()
-    {
-        _distanceChecker.PlayerApproached += OnPlayerApproached;
-        _distanceChecker.PlayerExited += StopAttack;
-    }
-
-    private void OnDisable()
-    {
-        _distanceChecker.PlayerExited -= StopAttack;
-        _distanceChecker.PlayerApproached -= OnPlayerApproached;
-    }
-
-    public void OnPlayerApproached()
+    public void StartAttack()
     {
         _enemyAnimator.PlayAttack();
-        print(_damage);
         _player.TakeDamage(_damage);
     }
 

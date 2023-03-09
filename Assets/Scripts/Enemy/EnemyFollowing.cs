@@ -8,7 +8,6 @@ public class EnemyFollowing : MonoBehaviour
     [SerializeField] private PatrolZone _patzolZone;
     [SerializeField] private float _speed;
 
-    private static readonly int _isWalking = Animator.StringToHash("IsWalking");
     private Vector3 _lastPositionTarget;
     private Tweener _tween;
     private Transform _currentPosition;
@@ -23,32 +22,6 @@ public class EnemyFollowing : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    private void OnEnable()
-    {
-        _patzolZone.TriggerEntered += OnTriggerEntered;
-        _patzolZone.TriggerExited += OnTriggerExited;
-        _distanceChecker.PlayerApproached += OnPlayerApproached;
-        _distanceChecker.PlayerExited += OnPlayerExited;
-    }
-
-    private void OnDisable()
-    {
-        _patzolZone.TriggerEntered -= OnTriggerEntered;
-        _patzolZone.TriggerExited -= OnTriggerExited;
-        _distanceChecker.PlayerApproached -= OnPlayerApproached;
-        _distanceChecker.PlayerExited -= OnPlayerExited;
-    }
-
-    private void OnPlayerApproached()
-    {
-        _enemyAnimator.StopWalk();   
-    }
-
-    private void OnPlayerExited()
-    {
-        _enemyAnimator.StartWalk();
-    }
-
     private void StartRotationCoroutine(Transform target)
     {
         if (_rotation != null)
@@ -57,7 +30,7 @@ public class EnemyFollowing : MonoBehaviour
         _rotation = StartCoroutine(RotateCoroutine(target));
     }
 
-    private void OnTriggerEntered(Transform target)
+    public void StartMove(Transform target)
     {
         StartRotationCoroutine(target);
 
@@ -65,7 +38,7 @@ public class EnemyFollowing : MonoBehaviour
         Chase(target);
     }
 
-    private void OnTriggerExited()
+    public void StopMove()
     {
         _enemyAnimator.StopWalk();
         Chase(_currentPosition);
