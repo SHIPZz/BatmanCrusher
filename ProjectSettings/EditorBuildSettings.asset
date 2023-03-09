@@ -57,145 +57,145 @@ EditorBuildSettings:
     path: Assets/JMO Assets/Toony Colors Pro/Demo TCP2/Demo_TCP2_Material_Layers.unity
     guid: f49a76cfa67a6c448b4475365f244012
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_12_Rigid__Reference_demolition.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_12_Rigid__Reference_demolition.unity
     guid: 0c3c34da5b4e8024d92c6348989aad1d
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/7 Restriction/_1_Restriction__Basics.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/7 Restriction/_1_Restriction__Basics.unity
     guid: 0dc01d361c7482a4da62ab3759f23fae
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_8_Rigid__Mesh_Demolition__Fragments.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_8_Rigid__Mesh_Demolition__Fragments.unity
     guid: fa52bd35f204b7b49a2777d6b9c4d43e
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_7_Rigid__Limitations.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_7_Rigid__Limitations.unity
     guid: 3cb06fa0b9df93347b4037d23243f406
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_6_Shatter__Types__Slices.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_6_Shatter__Types__Slices.unity
     guid: 99058d577775ac2468579ac439d92dbe
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_1_Shatter__Types__Voronoi.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_1_Shatter__Types__Voronoi.unity
     guid: 8772c6067f85aae43a71bc08fbf76391
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_11_Rigid__Connected_cluster_demolition.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_11_Rigid__Connected_cluster_demolition.unity
     guid: 04a40dae688782f4f8175980ec20a9c4
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_2_Connectivity__Activator.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_2_Connectivity__Activator.unity
     guid: 584c9719991a3644c9f1dfd063b4c327
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_3_Debris__Emission.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_3_Debris__Emission.unity
     guid: e67e6ee4310f42f4ab7f817c8d9aa268
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/8 Activator/_3__Activator__Animation.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/8 Activator/_3__Activator__Animation.unity
     guid: a5cf8ff1f54d39247b26031ce9abb0e0
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/5 Blade/_1_Blade__Basics.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/5 Blade/_1_Blade__Basics.unity
     guid: beecc276356455e4b897b2504ccbe7f8
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_2_Shatter__Types__Splinters.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_2_Shatter__Types__Splinters.unity
     guid: 2995b364e5cd5e443ad0a3167aae0670
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_5_Debris__Noise.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_5_Debris__Noise.unity
     guid: 59125fae12c76684283e1e868fc5c694
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/8 Activator/_1__Activator__Gizmo.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/8 Activator/_1__Activator__Gizmo.unity
     guid: dec07d331de30b54886d168eedadd038
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_16_Rigid__Reset.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_16_Rigid__Reset.unity
     guid: e5b85b499eb3cca4fa45a99098322ff9
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_2_Debris__Main.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_2_Debris__Main.unity
     guid: 2ed91bd8bae2e5143a2d042e4e6a855e
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_9_Shatter__Clusters.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_9_Shatter__Clusters.unity
     guid: f0a1b04685ecf5341b80dec564626e5e
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_2_Rigid__Object_Types.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_2_Rigid__Object_Types.unity
     guid: 4539b29193980874d8f43d9ca3a4f893
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_4_Debris__Dynamic.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_4_Debris__Dynamic.unity
     guid: cccd991f2404d614da2cca008aa3194a
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_14_Rigid__Damage.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_14_Rigid__Damage.unity
     guid: ded000e2326e6e14e92a814f90ec1c1d
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_4_Shatter__Types__Radial.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_4_Shatter__Types__Radial.unity
     guid: ed206f2751a91154eb105f5f26dd0bd5
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/10 Bomb/_1_Bomb__Basics.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/10 Bomb/_1_Bomb__Basics.unity
     guid: 35a5b8d8b4f913842b0dd605b362015f
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_5_Connectivity__Stress.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_5_Connectivity__Stress.unity
     guid: 07944720b14f5ea4fba0316a0911c07f
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_15_Rigid__Fading.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_15_Rigid__Fading.unity
     guid: b2c80c64c32465f438783152e07a78c8
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/9 RigidRoot/_1_RigidRoot_.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/9 RigidRoot/_1_RigidRoot_.unity
     guid: 129fd277e8a83eb478b4b7a485b912af
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_6_Debris__Collision.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_6_Debris__Collision.unity
     guid: 62e66f03ec1034d4a858d892d4a01b99
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_1_Debris__Types.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_1_Debris__Types.unity
     guid: 6f71ab852c7107a4eb60394701111101
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_3_Rigid__Mesh_Demolition_Types.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_3_Rigid__Mesh_Demolition_Types.unity
     guid: 1eece7771ed71b0489fbf19d0d0829a9
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_4_Connectivity__Collapse.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_4_Connectivity__Collapse.unity
     guid: 346d7ca39e74c2f47a052f2a31e46d23
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_1_Rigid__Simulation_Types.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_1_Rigid__Simulation_Types.unity
     guid: 19e4b1d307746bd4b8e2142d04bb029e
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_9_Rigid__Mesh_Demolition__Runtime_Caching.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_9_Rigid__Mesh_Demolition__Runtime_Caching.unity
     guid: b1a306b9b9cce0b42aab0155ad36c879
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_13_Rigid__Material.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_13_Rigid__Material.unity
     guid: 8de04fd9300f7b84695357e1eef27b1e
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_5_Shatter__Types__Custom.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_5_Shatter__Types__Custom.unity
     guid: e68ef184100329e47be75f639e3b4369
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_1_Connectivity__Basic.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_1_Connectivity__Basic.unity
     guid: f03342b79fae83946b7410989d3c9998
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/4 Dust/_1_Dust__Types.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/4 Dust/_1_Dust__Types.unity
     guid: 3de1c6bbe829b524d9a58619cd129469
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_10_Shatter__Types__Bricks.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_10_Shatter__Types__Bricks.unity
     guid: 0b5affd7f461def4b8a51c4796f27897
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_7_Debris__Limitations.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_7_Debris__Limitations.unity
     guid: d6355c0f47ed65d48824bad24db47951
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/8 Activator/_2__Activator__Activation.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/8 Activator/_2__Activator__Activation.unity
     guid: 9374b4c2e19208440a029e6c665c40f1
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/3 Debris/_8_Debris__Rendering.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/3 Debris/_8_Debris__Rendering.unity
     guid: 9920bb02f236ce44cbbbbe805a3b4e34
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_4_Rigid__Physics.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_4_Rigid__Physics.unity
     guid: df5a3f6be2012404a8dea30d142ffc20
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_8_Shatter__Types__Decompose.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_8_Shatter__Types__Decompose.unity
     guid: 66a7b7231bb4eb645872c573ca44bba3
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_3_Shatter__Types__Slabs.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_3_Shatter__Types__Slabs.unity
     guid: 78a136576b7cc804b8f4ed5b6208e30a
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_3_Connectivity__Gun.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_3_Connectivity__Gun.unity
     guid: 7e9fa069e7e71734db0d70e5467a07f6
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_10_Rigid__Nested_Cluster_demolition.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_10_Rigid__Nested_Cluster_demolition.unity
     guid: 166882079fd46514580687a3b973edb8
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/1 Shatter/_7_Shatter__Types__Tets.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/1 Shatter/_7_Shatter__Types__Tets.unity
     guid: 2085df0712626f541bfedb7466bc8289
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/2 Rigid/_5_Rigid__Activation.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/2 Rigid/_5_Rigid__Activation.unity
     guid: ab2b1d54194e8604dbfdfe2e88993206
   - enabled: 1
-    path: Assets/RayFire/Tutorial/Scenes/6 Connectivity/_6_Connectivity__Event.unity
+    path: Assets/Plugins 1/RayFire/Tutorial/Scenes/6 Connectivity/_6_Connectivity__Event.unity
     guid: 767faa6ce32b1894ca8b81dc81855134
   - enabled: 1
     path: Assets/Epic Toon FX/Demo/Scenes/etfx_explosions.unity
@@ -303,7 +303,7 @@ EditorBuildSettings:
     path: Assets/Epic Toon FX/Demo/Scenes/etfx_powerups.unity
     guid: 2c56ab0803e494e4d83581cfca9f47f2
   - enabled: 1
-    path: Assets/Lava_Flowing_Shader/Scenes/FLowingLava.unity
+    path: Assets/ModelResources/Lava_Flowing_Shader/Scenes/FLowingLava.unity
     guid: 4b5197d2a37c07c4ea690670a25a282d
   - enabled: 1
     path: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Death_Baker.unity

@@ -64,13 +64,13 @@ public class EnemyFollowing : MonoBehaviour
     {
         StartRotationCoroutine(target);
 
-        _animator.SetBool("IsWalking", true);
+        _animator.SetBool(_isWalking, true);
         Chase(target);
     }
 
     private void OnTriggerExited()
     {
-        _animator.SetBool("IsWalking", false);
+        _animator.SetBool(_isWalking, false);
         Chase(_currentPosition);
     }
 
