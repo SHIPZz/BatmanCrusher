@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyFollowing), typeof(Animator),typeof(DistanceChecker))]
+[RequireComponent(typeof(EnemyFollowing), typeof(Animator), typeof(DistanceChecker))]
 [RequireComponent(typeof(EnemyAnimator))]
 public class EnemyAttacker : MonoBehaviour
 {
@@ -23,12 +21,11 @@ public class EnemyAttacker : MonoBehaviour
     public void StartAttack()
     {
         _enemyAnimator.PlayAttack();
-        _player.TakeDamage(_damage);
+        //_player.TakeDamage(_damage);
     }
 
     public void StopAttack()
     {
         _enemyAnimator.StopAttack();
     }
-
 }
