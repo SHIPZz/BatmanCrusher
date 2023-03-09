@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyAnimator))]
-public class EnemyAttacker : MonoBehaviour
+public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
 {
     [SerializeField] private Player _player;
     [SerializeField] private EnemyFollowing _enemyFollowing;
@@ -15,7 +15,7 @@ public class EnemyAttacker : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    public void StartAttack()
+    public void StartAttack(Transform target)
     {
         _enemyAnimator.PlayAttack();
         _player.TakeDamage(_damage);

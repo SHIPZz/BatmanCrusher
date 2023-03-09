@@ -19,17 +19,17 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
 
     private void OnEnable()
     {
-        _zone.TriggerEntered += Attack;
+        _zone.TriggerEntered += StartAttack;
         _zone.TriggerExited += StopAttack;
     }
 
     private void OnDisable()
     {
-        _zone.TriggerEntered -= Attack;
+        _zone.TriggerEntered -= StartAttack;
         _zone.TriggerExited -= StopAttack;
     }   
 
-    public void Attack(Transform target)
+    public void StartAttack(Transform target)
     {
         _target = target;
 

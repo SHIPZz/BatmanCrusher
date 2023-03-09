@@ -124043,7 +124043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bow: {fileID: 5866666020338539954}
-  _speed: 50
+  _speed: 100
   _zone: {fileID: 1951052020}
 --- !u!65 &5866666020338539959
 BoxCollider:
