@@ -23,9 +23,13 @@ public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
     public void StartAttack(Transform target)
     {
         _enemyAnimator.PlayAttack();
-        _health.TakeDamage(_player.Damage);
         _player.TakeDamage(_damage);
     }
+
+    //private void TakeDamage()
+    //{
+    //    _health.TakeDamage(_player.Damage);
+    //}
 
     public void StopAttack()
     {

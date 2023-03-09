@@ -1,13 +1,15 @@
 using RayFire;
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(RayfireRigid))]
-public class EnemyDestruction : MonoBehaviour, IDamageable
+public class EnemyDestruction : MonoBehaviour
 {
     public const string Player = "Player";
 
+    [SerializeField] private Player _player;
     [SerializeField] private ParticleSystem _explosionEffect;
     [SerializeField] private AudioSource _audioSource;
 
@@ -23,10 +25,12 @@ public class EnemyDestruction : MonoBehaviour, IDamageable
     private Coroutine _delayCoroutine;
     private RayfireRigid _rayfireRigid;
     private BoxCollider _collider;
+    private DistanceChecker _distanceChecker;
 
     private void Awake()
     {
         _health= GetComponent<Health>();
+        _distanceChecker= GetComponent<DistanceChecker>();
         _rayfireRigid = GetComponent<RayfireRigid>();
         _explosionEffect.gameObject.SetActive(false);
         _audioSource.gameObject.SetActive(false);
@@ -36,11 +40,13 @@ public class EnemyDestruction : MonoBehaviour, IDamageable
     private void OnEnable()
     {
         _health.ValueZeroReached += OnHealthZeroReached;
+        _distanceChecker.PlayerApproached += TakeDamage;
     }
 
     private void OnDisable()
     {
         _health.ValueZeroReached -= OnHealthZeroReached;
+        _distanceChecker.PlayerApproached -= TakeDamage;
     }
 
     public void OnHealthZeroReached()
@@ -51,9 +57,9 @@ public class EnemyDestruction : MonoBehaviour, IDamageable
         CleanUp();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(Transform target)
     {
-        _health.TakeDamage(damage);
+        _health.TakeDamage(_player.Damage);
     }
 
     private void OnPlatformDestroyed(bool isDestroyed)

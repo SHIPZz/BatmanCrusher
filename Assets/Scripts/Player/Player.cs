@@ -27,6 +27,7 @@ public class Player : MonoBehaviour, IDamageable
     private void OnHealthZeroReached()
     {
         Destroy(gameObject);
+        Time.timeScale = 0;
     }
 
     public void TakeDamage(int damage)

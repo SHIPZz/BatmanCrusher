@@ -1957,6 +1957,7 @@ GameObject:
   - component: {fileID: 247710964}
   - component: {fileID: 247710965}
   - component: {fileID: 247710967}
+  - component: {fileID: 247710968}
   m_Layer: 8
   m_Name: Batman (2)
   m_TagString: Player
@@ -2185,6 +2186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lava: {fileID: 6076203620581463217}
+--- !u!65 &247710968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247710957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1103745, y: 2.1316557, z: 1.341795}
+  m_Center: {x: 0.10125351, y: 0.9541726, z: -0.2616545}
 --- !u!1 &251271233
 GameObject:
   m_ObjectHideFlags: 0
@@ -44383,6 +44397,7 @@ GameObject:
   - component: {fileID: 1334693244}
   - component: {fileID: 1334693254}
   - component: {fileID: 1334693256}
+  - component: {fileID: 1334693257}
   m_Layer: 13
   m_Name: creeper
   m_TagString: Untagged
@@ -44481,6 +44496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 247710963}
   _explosionEffect: {fileID: 1522667675}
   _audioSource: {fileID: 1522667673}
 --- !u!137 &1334693250
@@ -44794,6 +44810,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cd61a4aa79a5642be1299ade7ece70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1334693257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334693242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c5a6fa9500e3e4a977006e35aae128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolZone: {fileID: 690260873}
 --- !u!1 &1348861119
 GameObject:
   m_ObjectHideFlags: 0
@@ -94102,6 +94131,7 @@ GameObject:
   - component: {fileID: 5866666020338539954}
   - component: {fileID: 5866666020338539955}
   - component: {fileID: 5866666020338539959}
+  - component: {fileID: 5866666020338539960}
   m_Layer: 13
   m_Name: skeleton
   m_TagString: Untagged
@@ -94129,7 +94159,7 @@ GameObject:
   - component: {fileID: 919132148972054973}
   - component: {fileID: 919132148972054974}
   - component: {fileID: 919132148972054976}
-  - component: {fileID: 919132148972054975}
+  - component: {fileID: 919132148972054977}
   m_Layer: 13
   m_Name: creeper
   m_TagString: Untagged
@@ -94436,6 +94466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 247710963}
   _explosionEffect: {fileID: 8793973312186831161}
   _audioSource: {fileID: 8793973312175408397}
 --- !u!95 &919132148972054967
@@ -94512,18 +94543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5021901aa9e704c83fb6c82976e094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &919132148972054975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148972054954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98cd61a4aa79a5642be1299ade7ece70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &919132148972054976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94536,6 +94555,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cd61a4aa79a5642be1299ade7ece70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &919132148972054977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148972054954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c5a6fa9500e3e4a977006e35aae128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolZone: {fileID: 690260873}
 --- !u!4 &932052009881692404
 Transform:
   m_ObjectHideFlags: 0
@@ -120560,6 +120592,7 @@ GameObject:
   - component: {fileID: 4596020379318529690}
   - component: {fileID: 4596020379318529691}
   - component: {fileID: 4596020379318529693}
+  - component: {fileID: 4596020379318529694}
   m_Layer: 13
   m_Name: Golem (1)
   m_TagString: Untagged
@@ -121185,6 +121218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 247710963}
   _explosionEffect: {fileID: 1174392558465640284}
   _audioSource: {fileID: 1174392558485564668}
 --- !u!114 &4596020379318529681
@@ -121562,6 +121596,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cd61a4aa79a5642be1299ade7ece70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4596020379318529694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784018211147412532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c5a6fa9500e3e4a977006e35aae128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patrolZone: {fileID: 1509657386}
 --- !u!4 &4605273312843619999
 Transform:
   m_ObjectHideFlags: 0
@@ -122836,6 +122883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 247710963}
   _explosionEffect: {fileID: 564557848875932442}
   _audioSource: {fileID: 564557848856031850}
 --- !u!114 &5866666020338539954
@@ -122880,6 +122928,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7157477, y: 2.3443222, z: 1.0229475}
   m_Center: {x: 0.006097138, y: 0.83797175, z: 0.037010845}
+--- !u!114 &5866666020338539960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147509337448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5021901aa9e704c83fb6c82976e094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5877407395569042874
 Transform:
   m_ObjectHideFlags: 0
@@ -124409,6 +124469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89777504d039abc4eb3c3869c97f2708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 247710963}
   _explosionEffect: {fileID: 731850602}
   _audioSource: {fileID: 718123406}
 --- !u!1 &6931258103261025343
