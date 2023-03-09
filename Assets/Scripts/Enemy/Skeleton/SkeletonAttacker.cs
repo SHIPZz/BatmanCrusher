@@ -6,14 +6,17 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
     [SerializeField] private Bow _bow;
     [SerializeField] private float _speed;
     [SerializeField] private PatrolZone _zone;
+    [SerializeField] private Player _player;
 
     private readonly static int _isAttacked = Animator.StringToHash("IsAttacking");
     private Animator _animator;
     private Transform _target;
     private Coroutine _rotation;
+    private Health _health;
 
     private void Awake()
     {
+        _health= GetComponent<Health>();
         _animator = GetComponent<Animator>();
     }
 
@@ -27,7 +30,12 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
     {
         _zone.TriggerEntered -= StartAttack;
         _zone.TriggerExited -= StopAttack;
-    }   
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        _health.TakeDamage(_player.Damage);
+    }
 
     public void StartAttack(Transform target)
     {

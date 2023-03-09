@@ -31,10 +31,10 @@ public class EnemyStateController : MonoBehaviour
         _distanceChecker.PlayerExited -= OnPlayerExitedCollider;
     }
 
-    private void OnPlayerApproached()
+    private void OnPlayerApproached(Transform target)
     {
         _enemyFollowing.StopMove();
-        _enemyAttacker.StartAttack();
+        _enemyAttacker.StartAttack(target);
     }
 
     private void OnPlayerExitedCollider()

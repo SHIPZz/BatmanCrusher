@@ -26,11 +26,11 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnHealthZeroReached()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     public void TakeDamage(int damage)
     {
-        _health.Decrease(damage);
+        _health.TakeDamage(damage);
     }
 }

@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 
     public event Action ValueZeroReached;
 
-    public void Decrease(int damage)
+    public void TakeDamage(int damage)
     {
         CurrentValue = Mathf.Clamp(CurrentValue - damage, 0, CurrentValue);
 

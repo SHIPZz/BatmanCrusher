@@ -19,34 +19,42 @@ public class EnemyDestruction : MonoBehaviour, IDamageable
     private readonly float _wantedTimeScale = 0.2f;
     private readonly float _duration = 3f;
 
+    private Health _health;
     private Coroutine _delayCoroutine;
     private RayfireRigid _rayfireRigid;
     private BoxCollider _collider;
 
     private void Awake()
     {
+        _health= GetComponent<Health>();
         _rayfireRigid = GetComponent<RayfireRigid>();
         _explosionEffect.gameObject.SetActive(false);
         _audioSource.gameObject.SetActive(false);
         _collider = GetComponent<BoxCollider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnEnable()
     {
-        if (other.gameObject.CompareTag(Player))
-        {
-            _collider.enabled = false;
-            PlayVisualEffect();
+        _health.ValueZeroReached += OnHealthZeroReached;
+    }
 
-            CleanUp();
-        }
+    private void OnDisable()
+    {
+        _health.ValueZeroReached -= OnHealthZeroReached;
+    }
+
+    public void OnHealthZeroReached()
+    {
+        _collider.enabled = false;
+        PlayVisualEffect();
+
+        CleanUp();
     }
 
     public void TakeDamage(int damage)
     {
-        throw new NotImplementedException();
+        _health.TakeDamage(damage);
     }
-
 
     private void OnPlatformDestroyed(bool isDestroyed)
     {
