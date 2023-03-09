@@ -10,11 +10,10 @@ public class EnemyDestruction : MonoBehaviour
 
     [SerializeField] private ParticleSystem _explosionEffect;
     [SerializeField] private AudioSource _audioSource;
-    //[SerializeField] private CubeDestruction _platfromForObject;
 
     public event Action Destroyed;
 
-    private readonly float _delay = 1f;
+    private readonly float _delay = 0.15f;
     private readonly float _initalCameraZoom = 35;
     private readonly float _wantedCameraZoom = 60;
     private readonly float _wantedTimeScale = 0.2f;
@@ -43,6 +42,9 @@ public class EnemyDestruction : MonoBehaviour
         }
     }
 
+
+
+
     private void OnPlatformDestroyed(bool isDestroyed)
     {
         PlayVisualEffect();
@@ -58,8 +60,8 @@ public class EnemyDestruction : MonoBehaviour
 
     private IEnumerator MakeDelay()
     {
-        //yield return new WaitForSeconds(0.1f);
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(_delay);
+
         _rayfireRigid.Demolish();
 
         yield return null;

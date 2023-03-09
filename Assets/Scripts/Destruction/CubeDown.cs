@@ -7,6 +7,7 @@ public class CubeDown : MonoBehaviour
 {
     [SerializeField] private EnemyDeath _enemyDeath;
 
+    private readonly float _delay = 5f;
     private PhysicalObject _physicalObject;
 
     private void Awake()
@@ -19,6 +20,6 @@ public class CubeDown : MonoBehaviour
         if (collision.gameObject.CompareTag(EnemyDestruction.Player))
             _physicalObject.MakePhysical();
 
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, _delay);
     }
 }

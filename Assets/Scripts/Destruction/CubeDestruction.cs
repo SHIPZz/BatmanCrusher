@@ -16,21 +16,10 @@ public class CubeDestruction : MonoBehaviour
         _rayfireRigid = GetComponent<RayfireRigid>();
     }
 
-    //private void OnEnable()
-    //{
-    //    _enemy.Destroyed += OnEnemyDestroyed;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    _enemy.Destroyed -= OnEnemyDestroyed;
-    //}
-
     private void OnEnemyDestroyed()
     {
         _rayfireRigid.Demolish();
     }
-
 
     private void OnTriggerEnter(Collider other)
     {

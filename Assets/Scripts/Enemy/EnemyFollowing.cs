@@ -8,48 +8,45 @@ public class EnemyFollowing : MonoBehaviour
     [SerializeField] private PatrolZone _patzolZone;
     [SerializeField] private float _speed;
 
-    public event Action<Transform> TriggerEntered;
-
-    public event Action TriggerExited;
-
-    private Vector3 _lastPositionTarget;
     private static readonly int _isWalking = Animator.StringToHash("IsWalking");
+    private Vector3 _lastPositionTarget;
     private Tweener _tween;
-    private Animator _animator;
     private Transform _currentPosition;
     private Coroutine _rotation;
+    private DistanceChecker _distanceChecker;
+    private EnemyAnimator _enemyAnimator;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
         _currentPosition = transform;
+        _distanceChecker = GetComponent<DistanceChecker>(); 
+        _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
     private void OnEnable()
     {
         _patzolZone.TriggerEntered += OnTriggerEntered;
         _patzolZone.TriggerExited += OnTriggerExited;
+        _distanceChecker.PlayerApproached += OnPlayerApproached;
+        _distanceChecker.PlayerExited += OnPlayerExited;
     }
 
     private void OnDisable()
     {
         _patzolZone.TriggerEntered -= OnTriggerEntered;
         _patzolZone.TriggerExited -= OnTriggerExited;
+        _distanceChecker.PlayerApproached -= OnPlayerApproached;
+        _distanceChecker.PlayerExited -= OnPlayerExited;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnPlayerApproached()
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
-        {
-            _animator.SetBool(_isWalking, false);
-            TriggerEntered?.Invoke(other.transform);
-        }
+        _enemyAnimator.StopWalk();   
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnPlayerExited()
     {
-        if (other.gameObject.CompareTag(EnemyDestruction.Player))
-            TriggerExited?.Invoke();
+        _enemyAnimator.StartWalk();
     }
 
     private void StartRotationCoroutine(Transform target)
@@ -64,13 +61,13 @@ public class EnemyFollowing : MonoBehaviour
     {
         StartRotationCoroutine(target);
 
-        _animator.SetBool(_isWalking, true);
+        _enemyAnimator.StartWalk();
         Chase(target);
     }
 
     private void OnTriggerExited()
     {
-        _animator.SetBool(_isWalking, false);
+        _enemyAnimator.StopWalk();
         Chase(_currentPosition);
     }
 

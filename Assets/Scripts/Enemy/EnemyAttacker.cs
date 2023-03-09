@@ -2,28 +2,46 @@ using System.Collections;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyFollowing), typeof(Animator))]
-public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
+[RequireComponent(typeof(EnemyFollowing), typeof(Animator),typeof(DistanceChecker))]
+[RequireComponent(typeof(EnemyAnimator))]
+public class EnemyAttacker : MonoBehaviour
 {
     [SerializeField] private Player _player;
+    [SerializeField] private EnemyFollowing _enemyFollowing;
+    [SerializeField] private float _speed;
+    [SerializeField] private int _damage;
 
-    private static readonly int _isAttacked = Animator.StringToHash("IsAttacked");
-
-    private Coroutine _animation;
-    private Animator _animator;
+    private DistanceChecker _distanceChecker;
+    private EnemyAnimator _enemyAnimator;
 
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        _distanceChecker = GetComponent<DistanceChecker>();
+        _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    public void Attack(Transform target)
+    private void OnEnable()
     {
-        _animator.SetBool(_isAttacked, true);
+        _distanceChecker.PlayerApproached += OnPlayerApproached;
+        _distanceChecker.PlayerExited += StopAttack;
+    }
+
+    private void OnDisable()
+    {
+        _distanceChecker.PlayerExited -= StopAttack;
+        _distanceChecker.PlayerApproached -= OnPlayerApproached;
+    }
+
+    public void OnPlayerApproached()
+    {
+        _enemyAnimator.PlayAttack();
+        print(_damage);
+        _player.TakeDamage(_damage);
     }
 
     public void StopAttack()
     {
-        _animator.SetBool(_isAttacked, false);
+        _enemyAnimator.StopAttack();
     }
+
 }

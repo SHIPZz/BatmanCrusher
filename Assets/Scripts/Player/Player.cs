@@ -3,7 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour, IDamageable
 {
+    [SerializeField] private int _damage;
+
     private Health _health;
+
+    public int Damage => _damage;
 
     private void Awake()
     {
