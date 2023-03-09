@@ -15599,7 +15599,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 439397977}
   _speed: 50
 --- !u!114 &671582110
 MonoBehaviour:
@@ -45378,7 +45377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 690260873}
   _speed: 50
 --- !u!114 &1334693246
 MonoBehaviour:
@@ -95282,7 +95280,6 @@ GameObject:
   - component: {fileID: 5866666020338539952}
   - component: {fileID: 5866666020338539954}
   - component: {fileID: 5866666020338539955}
-  - component: {fileID: 5866666020338539958}
   - component: {fileID: 5866666020338539959}
   m_Layer: 13
   m_Name: skeleton
@@ -95668,7 +95665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 690260873}
   _speed: 50
 --- !u!65 &919132148972054973
 BoxCollider:
@@ -122720,7 +122716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 1509657386}
   _speed: 50
 --- !u!114 &4596020379318529691
 MonoBehaviour:
@@ -124050,20 +124045,6 @@ MonoBehaviour:
   _bow: {fileID: 5866666020338539954}
   _speed: 50
   _zone: {fileID: 1951052020}
---- !u!114 &5866666020338539958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147509337448}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 0}
-  _speed: 0
 --- !u!65 &5866666020338539959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -125283,7 +125264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4b0d016ccb47db42acbc4ea065157eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patzolZone: {fileID: 439397977}
   _speed: 50
 --- !u!114 &6917280799097954426
 MonoBehaviour:

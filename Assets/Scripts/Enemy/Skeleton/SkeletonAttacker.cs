@@ -7,7 +7,7 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
     [SerializeField] private float _speed;
     [SerializeField] private PatrolZone _zone;
 
-    private readonly static int _isAttacked = Animator.StringToHash("IsAttacked");
+    private readonly static int _isAttacked = Animator.StringToHash("IsAttacking");
     private Animator _animator;
     private Transform _target;
     private Coroutine _rotation;
