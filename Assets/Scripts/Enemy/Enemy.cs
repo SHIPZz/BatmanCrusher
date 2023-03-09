@@ -36,11 +36,6 @@ public class Enemy : MonoBehaviour, IDamageable
         _enemyFollow.TriggerExited -= StopAttack;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    _player.TakeDamage(_damage);
-    //}
-
     public void StopAttack()
     {
         _enemyAttacker.StopAttack();
