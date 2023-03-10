@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
-    public const int KillDamage = 100;
-
-    [SerializeField] private Player _player;
+    public const int Damage = 100;
 
     public event Action Hit;
 
     private void OnTriggerEnter(Collider other)
     {
-        _player.TakeDamage(KillDamage);
+        if (other.gameObject.TryGetComponent(out Health health))
+            health.TakeDamage(Damage);
     }
 }

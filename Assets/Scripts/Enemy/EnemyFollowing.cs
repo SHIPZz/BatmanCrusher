@@ -8,6 +8,8 @@ public class EnemyFollowing : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
+    private readonly float _delay = 0.5f;
+
     private Vector3 _lastPositionTarget;
     private Tweener _tween;
     private Transform _currentPosition;
@@ -44,7 +46,7 @@ public class EnemyFollowing : MonoBehaviour
 
     private void Chase(Transform target)
     {
-        _tween = transform.DOMoveX(target.position.x, 0.5f).SetAutoKill(false);
+        _tween = transform.DOMoveX(target.position.x, _delay).SetAutoKill(false);
         _lastPositionTarget = target.position;
 
         if (_lastPositionTarget != null)
