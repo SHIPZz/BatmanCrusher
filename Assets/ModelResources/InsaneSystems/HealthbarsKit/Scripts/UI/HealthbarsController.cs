@@ -21,6 +21,7 @@ namespace InsaneSystems.HealthbarsKit.UI
 
 		List<Healthbar> allHealthbars = new List<Healthbar>();
 
+		[SerializeField] private Camera _camera;
 		[SerializeField] Canvas canvasForHealthbars;
 		[SerializeField] GameObject healthbarObjectTemplate;
 		[SerializeField] bool setColorByHealthPercents;
@@ -34,7 +35,7 @@ namespace InsaneSystems.HealthbarsKit.UI
 		void Awake()
 		{
 			instance = this;
-			cachedCamera = Camera.main; // caching camera because Camera.main is expensive on maps with big objects count.
+			cachedCamera = _camera; // caching camera because Camera.main is expensive on maps with big objects count.
 		}
 
 		void Update()

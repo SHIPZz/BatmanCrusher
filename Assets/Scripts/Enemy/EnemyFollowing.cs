@@ -12,7 +12,7 @@ public class EnemyFollowing : MonoBehaviour
 
     private Vector3 _lastPositionTarget;
     private Tweener _tween;
-    private Transform _currentPosition;
+    private UnityEngine.Transform _currentPosition;
     private Coroutine _rotation;
     private EnemyAnimator _enemyAnimator;
 
@@ -22,7 +22,7 @@ public class EnemyFollowing : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    private void StartRotationCoroutine(Transform target)
+    private void StartRotationCoroutine(UnityEngine.Transform target)
     {
         if (_rotation != null)
             StopCoroutine(_rotation);
@@ -30,7 +30,7 @@ public class EnemyFollowing : MonoBehaviour
         _rotation = StartCoroutine(RotateCoroutine(target));
     }
 
-    public void StartMove(Transform target)
+    public void StartMove(UnityEngine.Transform target)
     {
         StartRotationCoroutine(target);
 
@@ -44,7 +44,7 @@ public class EnemyFollowing : MonoBehaviour
         Chase(_currentPosition);
     }
 
-    private void Chase(Transform target)
+    private void Chase(UnityEngine.Transform target)
     {
         _tween = transform.DOMoveX(target.position.x, _delay).SetAutoKill(false);
         _lastPositionTarget = target.position;
@@ -56,7 +56,7 @@ public class EnemyFollowing : MonoBehaviour
         }
     }
 
-    private IEnumerator RotateCoroutine(Transform player)
+    private IEnumerator RotateCoroutine(UnityEngine.Transform player)
     {
         while (transform.rotation != player.transform.rotation)
         {

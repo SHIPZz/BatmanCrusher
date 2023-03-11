@@ -7,11 +7,15 @@ namespace InsaneSystems.HealthbarsKit.UI
 	public class Healthbar : MonoBehaviour
 	{
 		[SerializeField] Image fillImage;
+		[SerializeField] private Health _health;
+		[SerializeField] private Transform _hero;
+		[SerializeField] private float _offsetAbovePlayer = 2;
+		[SerializeField] private float _maxHealthValue = 100;
+
 
 		RectTransform rectTransform;
 
-		Transform target;
-		float maxHealthValue;
+        UnityEngine.Transform target;
 		float targetHeight = 1f;
 
 		void Awake()
@@ -21,8 +25,23 @@ namespace InsaneSystems.HealthbarsKit.UI
 			rectTransform.anchorMax = new Vector2(0, 0);
 		}
 
-		/// <summary> We using cusstom method for update, which called on all healthbars from HealthbarsController. It increases performance for a bit on big healthbars count. </summary>
-		public void OnUpdate()
+        private void OnEnable()
+        {
+			_health.ValueChanged += OnHealthChanged;
+        }
+
+        private void OnDisable()
+        {
+            _health.ValueChanged -= OnHealthChanged;
+        }
+
+        private void LateUpdate()
+        {
+            transform.position = _hero.position + Vector3.up * _offsetAbovePlayer;
+        }
+
+        /// <summary> We using cusstom method for update, which called on all healthbars from HealthbarsController. It increases performance for a bit on big healthbars count. </summary>
+        public void OnUpdate()
 		{
 			if (!target)
 			{
@@ -43,10 +62,9 @@ namespace InsaneSystems.HealthbarsKit.UI
 				fillImage.color *= 2f;
 		}
 
-		public void SetupWithTarget(Transform newTarget, float targetMaxHealth)
+		public void SetupWithTarget(UnityEngine.Transform newTarget, float targetMaxHealth)
 		{
 			target = newTarget;
-			maxHealthValue = targetMaxHealth;
 		}
 
 		public void SetTargetHeight(float newHeight)
@@ -58,7 +76,7 @@ namespace InsaneSystems.HealthbarsKit.UI
 		/// <param name="healthValue">Actual health of character.</param>
 		public void OnHealthChanged(float healthValue)
 		{
-			fillImage.fillAmount = healthValue / maxHealthValue;
+			fillImage.fillAmount = healthValue / _maxHealthValue;
 
 			if (HealthbarsController.instance.SetColorByHealthPecents)
 				SetColorByFillValue();

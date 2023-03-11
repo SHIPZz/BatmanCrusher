@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LookingAtCamera : MonoBehaviour
 {
-    [SerializeField] private Transform _camera;
+    [SerializeField] private UnityEngine.Transform _camera;
+    [SerializeField] private float _positionOffset;
 
     private void LateUpdate()
     {
-        transform.LookAt(_camera);
+        //transform.position = Camera.main.ScreenToWorldPoint(transform.position + Vector3.up * _positionOffset);
+        //transform.LookAt(_camera);
     }
 }

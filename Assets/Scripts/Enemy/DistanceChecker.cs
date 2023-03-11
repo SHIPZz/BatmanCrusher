@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DistanceChecker : MonoBehaviour
 {
-    public event Action<Transform> PlayerApproached;
+    public event Action<UnityEngine.Transform> PlayerApproached;
     public event Action PlayerExited;
 
     private void OnTriggerEnter(Collider other)

@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IEnemyAttacker 
 {
-    void StartAttack(Transform target);
+    void StartAttack(UnityEngine.Transform target);
     void StopAttack();
 }

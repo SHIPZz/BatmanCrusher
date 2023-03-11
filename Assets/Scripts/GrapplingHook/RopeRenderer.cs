@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class RopeRenderer : MonoBehaviour
 {
-    [SerializeField] private Transform _hand;
+    [SerializeField] private UnityEngine.Transform _hand;
     [SerializeField] private GrapplingHook _hook;
     [SerializeField] private int _segmentsCount;
     [SerializeField] private float _drawSpeed;

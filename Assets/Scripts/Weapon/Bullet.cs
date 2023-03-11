@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-   [SerializeField] private Player _player;
    [SerializeField] private Bow _bow;
 
     private Vector3 _direction;
@@ -10,7 +9,6 @@ public class Bullet : MonoBehaviour
 
     private void Awake()
     {
-
         _bulletMovement = GetComponent<BulletMovement>();
     }
 

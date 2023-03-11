@@ -24,7 +24,7 @@ namespace InsaneSystems.HealthbarsKit
 		void AddHealthbarToThisObject()
 		{
 			var healthBar = HealthbarsController.instance.AddHealthbar(gameObject, maxHealth);
-			healthChangedEvent += healthBar.OnHealthChanged; // setting up event to connect healthbar with this damageable. Now every time when it will take damage, healthbar will be updated.
+			/*healthChangedEvent += healthBar.OnHealthChanged;*/ // setting up event to connect healthbar with this damageable. Now every time when it will take damage, healthbar will be updated.
 
 			OnHealthChanged();
 		}

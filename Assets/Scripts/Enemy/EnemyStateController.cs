@@ -1,3 +1,4 @@
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 [RequireComponent(typeof(DistanceChecker), typeof(EnemyFollowing), typeof(EnemyAttacker))]
 public class EnemyStateController : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyStateController : MonoBehaviour
     private EnemyAttacker _enemyAttacker;
     private EnemyFollowing _enemyFollowing;
     private DistanceChecker _distanceChecker;
+    private Transform _target;
 
     private void Awake()
     {
@@ -31,7 +33,7 @@ public class EnemyStateController : MonoBehaviour
         _distanceChecker.PlayerExited -= OnPlayerExitedCollider;
     }
 
-    private void OnPlayerApproached(Transform target)
+    private void OnPlayerApproached(UnityEngine.Transform target)
     {
         _enemyFollowing.StopMove();
         _enemyAttacker.StartAttack(target);
@@ -40,6 +42,8 @@ public class EnemyStateController : MonoBehaviour
     private void OnPlayerExitedCollider()
     {
         _enemyAttacker.StopAttack();
+        _enemyFollowing.StartMove(_target);
+       
     }
 
     private void OnPlayerExitedZone()
@@ -47,8 +51,9 @@ public class EnemyStateController : MonoBehaviour
         _enemyFollowing.StopMove();
     }
 
-    private void OnPlayerEnteredZone(Transform target)
+    private void OnPlayerEnteredZone(UnityEngine.Transform target)
     {
+        _target = target;
         _enemyFollowing.StartMove(target);
     }
 }

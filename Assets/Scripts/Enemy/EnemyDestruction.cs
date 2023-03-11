@@ -22,7 +22,8 @@ public class EnemyDestruction : MonoBehaviour
     private readonly float _duration = 3f;
 
     private Health _health;
-    private Coroutine _delayCoroutine;
+    private Coroutine _demolishDelay;
+    private Coroutine _damageDelay;
     private RayfireRigid _rayfireRigid;
     private BoxCollider _collider;
     private DistanceChecker _distanceChecker;
@@ -57,10 +58,24 @@ public class EnemyDestruction : MonoBehaviour
         CleanUp();
     }
 
-    public void TakeDamage(Transform target)
+    public void TakeDamage(UnityEngine.Transform target)
+    {
+        if (_damageDelay != null)
+            StopCoroutine(_damageDelay);
+
+        _damageDelay = StartCoroutine(MakeDamageDelay());
+
+        //_health.TakeDamage(_player.Damage);
+    }
+
+    private IEnumerator MakeDamageDelay()
     {
         print(_player.Damage);
         _health.TakeDamage(_player.Damage);
+        yield return null;
+        gameObject.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(0.7f);
+        gameObject.GetComponent<Collider>().enabled = true;
     }
 
     private void OnPlatformDestroyed(bool isDestroyed)
@@ -70,13 +85,13 @@ public class EnemyDestruction : MonoBehaviour
 
     private void CleanUp()
     {
-        if (_delayCoroutine != null)
-            StopCoroutine(_delayCoroutine);
+        if (_demolishDelay != null)
+            StopCoroutine(_demolishDelay);
 
-        _delayCoroutine = StartCoroutine(MakeDelay());
+        _demolishDelay = StartCoroutine(MakeDemolishDelay());
     }
 
-    private IEnumerator MakeDelay()
+    private IEnumerator MakeDemolishDelay()
     {
         yield return new WaitForSeconds(_delay);
 

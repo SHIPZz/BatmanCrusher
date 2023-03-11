@@ -4,8 +4,8 @@ using UnityEngine;
 public class Player : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _damage;
-    [SerializeField] private ParticleSystem _deathEffect;
-    [SerializeField] private AudioSource _deathSound;
+    //[SerializeField] private ParticleSystem _deathEffect;
+    //[SerializeField] private AudioSource _deathSound;
 
     private Health _health;
 
@@ -13,8 +13,8 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        _deathEffect.gameObject.SetActive(false);
-        _deathSound.gameObject.SetActive(false);
+        //_deathEffect.gameObject.SetActive(false);
+        //_deathSound.gameObject.SetActive(false);
         _health = GetComponent<Health>();
     }
 
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         Destroy(gameObject);
 
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     //private void PlayDeathEffects()
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour, IDamageable
     //    _deathSound.Play();
     //}
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         _health.TakeDamage(damage);
     }

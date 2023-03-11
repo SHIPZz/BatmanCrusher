@@ -6,7 +6,7 @@ public class Bow : MonoBehaviour, IDistanceWeapon
 {
     [SerializeField] private Bullet _bullet;
 
-    public int Damage { get; private set; } = 10;
+    public float Damage { get; private set; } = 5;
 
     private readonly float _delay = 2f;
     private Bullet _currentBullet;

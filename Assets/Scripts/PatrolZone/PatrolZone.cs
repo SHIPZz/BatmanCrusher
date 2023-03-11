@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PatrolZone : MonoBehaviour
 {
-    public event Action<Transform> TriggerEntered;
+    public event Action<UnityEngine.Transform> TriggerEntered;
 
     public event Action TriggerExited;
 

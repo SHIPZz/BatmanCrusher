@@ -7,7 +7,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] private HookRenderer _hookRenderer;
     [SerializeField] private SpringJoint _springJoint;
     [SerializeField] private Camera _camera;
-    [SerializeField] private Transform _hookTransform;
+    [SerializeField] private UnityEngine.Transform _hookTransform;
     [SerializeField] private Rigidbody _hook;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _maxDistance;

@@ -17,7 +17,7 @@ namespace UnityTemplateProjects
             public float y;
             public float z;
 
-            public void SetFromTransform(Transform t)
+            public void SetFromTransform(UnityEngine.Transform t)
             {
                 pitch = t.eulerAngles.x;
                 yaw = t.eulerAngles.y;
@@ -47,7 +47,7 @@ namespace UnityTemplateProjects
                 z = Mathf.Lerp(z, target.z, positionLerpPct);
             }
 
-            public void UpdateTransform(Transform t)
+            public void UpdateTransform(UnityEngine.Transform t)
             {
                 t.eulerAngles = new Vector3(pitch, yaw, roll);
                 t.position = new Vector3(x, y, z);

@@ -10,7 +10,7 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
 
     private readonly static int _isAttacked = Animator.StringToHash("IsAttacking");
     private Animator _animator;
-    private Transform _target;
+    private UnityEngine.Transform _target;
     private Coroutine _rotation;
     private Health _health;
 
@@ -37,7 +37,7 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
         _health.TakeDamage(_player.Damage);
     }
 
-    public void StartAttack(Transform target)
+    public void StartAttack(UnityEngine.Transform target)
     {
         _target = target;
 
@@ -59,7 +59,7 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
         _bow.Shoot(_target.position);
     }
 
-    private void StartRotationCoroutine(Transform target)
+    private void StartRotationCoroutine(UnityEngine.Transform target)
     {
         if (_rotation != null)
             StopCoroutine(_rotation);
@@ -67,7 +67,7 @@ public class SkeletonAttacker : MonoBehaviour, IEnemyAttacker
         _rotation = StartCoroutine(RotateCoroutine(target));
     }
 
-    private IEnumerator RotateCoroutine(Transform player)
+    private IEnumerator RotateCoroutine(UnityEngine.Transform player)
     {
         while (transform.rotation != player.transform.rotation)
         {
