@@ -4,7 +4,7 @@ using UnityEngine;
 public class DistanceChecker : MonoBehaviour
 {
     public event Action<UnityEngine.Transform> PlayerApproached;
-    public event Action PlayerExited;
+    public event Action<Transform> PlayerExited;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,7 @@ public class DistanceChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerExited?.Invoke();
+        print("triggetExit");
+        PlayerExited?.Invoke(other.transform);
     }
 }

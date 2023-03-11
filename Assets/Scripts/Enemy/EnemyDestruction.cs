@@ -12,6 +12,7 @@ public class EnemyDestruction : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private ParticleSystem _explosionEffect;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private ParticleSystem _emojiEffect;
 
     public event Action Destroyed;
 
@@ -19,7 +20,7 @@ public class EnemyDestruction : MonoBehaviour
     private readonly float _initalCameraZoom = 35;
     private readonly float _wantedCameraZoom = 60;
     private readonly float _wantedTimeScale = 0.2f;
-    private readonly float _duration = 3f;
+    private readonly float _duration = 3.5f;
 
     private Health _health;
     private Coroutine _demolishDelay;
@@ -110,5 +111,6 @@ public class EnemyDestruction : MonoBehaviour
 
         _audioSource.Play();
         _explosionEffect.Play();
+        _emojiEffect.Play();
     }
 }

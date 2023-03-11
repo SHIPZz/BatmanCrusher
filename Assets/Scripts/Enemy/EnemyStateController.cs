@@ -35,24 +35,27 @@ public class EnemyStateController : MonoBehaviour
 
     private void OnPlayerApproached(UnityEngine.Transform target)
     {
+        print("playerApproachedCollider");
         _enemyFollowing.StopMove();
         _enemyAttacker.StartAttack(target);
     }
 
-    private void OnPlayerExitedCollider()
+    private void OnPlayerExitedCollider(Transform target)
     {
+        print("playerExitedCollider");
         _enemyAttacker.StopAttack();
-        _enemyFollowing.StartMove(_target);
-       
+        _enemyFollowing.StartMove(target);    
     }
 
     private void OnPlayerExitedZone()
     {
+        print("playerExitedZone");
         _enemyFollowing.StopMove();
     }
 
     private void OnPlayerEnteredZone(UnityEngine.Transform target)
     {
+        print("playerEnteredZone");
         _target = target;
         _enemyFollowing.StartMove(target);
     }
