@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpikeTrapEffect : MonoBehaviour
@@ -10,7 +8,7 @@ public class SpikeTrapEffect : MonoBehaviour
 
     private void Awake()
     {
-        _spikeTrap= GetComponent<SpikeTrap>();
+        _spikeTrap = GetComponent<SpikeTrap>();
     }
 
     private void OnEnable()
@@ -18,13 +16,13 @@ public class SpikeTrapEffect : MonoBehaviour
         _spikeTrap.Hit += OnHit;
     }
 
-    private void OnHit()
-    {
-        _prickEffect.Play();
-    }
-
     private void OnDisable()
     {
         _spikeTrap.Hit -= OnHit;
+    }
+
+    private void OnHit()
+    {
+        _prickEffect.Play();
     }
 }

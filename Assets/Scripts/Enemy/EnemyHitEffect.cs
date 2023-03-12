@@ -24,7 +24,9 @@ public class EnemyHitEffect : MonoBehaviour
    private IEnumerator DestroyWithDelay()
     {
         _angryEffect.Play();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        _angryEffect.gameObject.SetActive(false);
+        yield return new WaitForSeconds(10f);
         Destroy(_angryEffect.gameObject);
     }
 }

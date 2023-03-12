@@ -61,22 +61,19 @@ public class EnemyDestruction : MonoBehaviour
 
     public void TakeDamage(UnityEngine.Transform target)
     {
-        if (_damageDelay != null)
-            StopCoroutine(_damageDelay);
+        //if (_damageDelay != null)
+        //    StopCoroutine(_damageDelay);
 
-        _damageDelay = StartCoroutine(MakeDamageDelay());
+        //_damageDelay = StartCoroutine(MakeDamageDelay());
 
-        //_health.TakeDamage(_player.Damage);
+        //print(_player.Damage);
+        _health.TakeDamage(_player.Damage);
     }
 
     private IEnumerator MakeDamageDelay()
     {
-        print(_player.Damage);
         _health.TakeDamage(_player.Damage);
-        yield return null;
-        gameObject.GetComponent<Collider>().enabled = false;
-        yield return new WaitForSeconds(0.7f);
-        gameObject.GetComponent<Collider>().enabled = true;
+        yield return new WaitForSeconds(1f);
     }
 
     private void OnPlatformDestroyed(bool isDestroyed)

@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    private readonly static int IsOpened = Animator.StringToHash("IsOpened");
+   [SerializeField] private ParticleSystem _openEffect;
 
+    private readonly static int IsOpened = Animator.StringToHash("IsOpened");
     private Animator _animator;
 
     private void Awake()
@@ -13,6 +14,7 @@ public class Chest : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        _openEffect.Play();
         _animator.SetTrigger(IsOpened);
     }
 }

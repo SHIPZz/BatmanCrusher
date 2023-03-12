@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyAnimator))]
-public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
+public class EnemyAttacker : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private EnemyFollowing _enemyFollowing;
@@ -17,10 +17,8 @@ public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
-    public void StartAttack(Transform target)
+    public void StartAttack()
     {
-        _enemyAnimator.PlayAttack();
-
         if (_animationDelay != null)
             StopCoroutine(_animationDelay);
 
@@ -34,7 +32,8 @@ public class EnemyAttacker : MonoBehaviour, IEnemyAttacker
     
     private IEnumerator StartAttackCoroutine()
     {
-        yield return new WaitForSeconds(1);
+        _enemyAnimator.PlayAttack();
+        yield return new WaitForSeconds(0.3f);
         _player.TakeDamage(_damage);
     }
 }
