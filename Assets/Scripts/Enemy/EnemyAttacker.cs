@@ -17,12 +17,14 @@ public class EnemyAttacker : MonoBehaviour
         _enemyAnimator = GetComponent<EnemyAnimator>();
     }
 
+    public void OnGaveDamage()
+    {
+        _player.TakeDamage(_damage);
+    }
+
     public void StartAttack()
     {
-        if (_animationDelay != null)
-            StopCoroutine(_animationDelay);
-
-        _animationDelay = StartCoroutine(StartAttackCoroutine());
+        _enemyAnimator.PlayAttack();
     }
 
     public void StopAttack()
@@ -34,6 +36,5 @@ public class EnemyAttacker : MonoBehaviour
     {
         _enemyAnimator.PlayAttack();
         yield return new WaitForSeconds(0.3f);
-        _player.TakeDamage(_damage);
     }
 }

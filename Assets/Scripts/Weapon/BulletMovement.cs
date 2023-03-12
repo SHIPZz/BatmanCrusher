@@ -8,6 +8,7 @@ public class BulletMovement : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        transform.position = transform.position + direction * _speed * Time.deltaTime;
+        transform.Translate(direction * _speed * Time.deltaTime);
+        //transform.position = transform.position + direction * _speed * Time.deltaTime;
     }
 }

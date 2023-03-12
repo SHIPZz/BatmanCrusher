@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
@@ -6,6 +7,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private int _damage;
     //[SerializeField] private ParticleSystem _deathEffect;
     //[SerializeField] private AudioSource _deathSound;
+
+    public event Action Dead;
 
     private Health _health;
 
@@ -30,7 +33,8 @@ public class Player : MonoBehaviour, IDamageable
 
     private void OnHealthZeroReached()
     {
-        Destroy(gameObject);
+        Dead?.Invoke();
+        Destroy(gameObject,5f);
 
         //Time.timeScale = 0;
     }

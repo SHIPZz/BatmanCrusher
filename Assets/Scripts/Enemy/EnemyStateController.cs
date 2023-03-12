@@ -35,10 +35,6 @@ public class EnemyStateController : MonoBehaviour
 
     private void Update()
     {
-        if (_distanceChecker.IsPlayerApproached)
-            _enemyAttacker.StopAttack();
-
-
         if (_patrolZone.IsPlayerInside == true && _distanceChecker.IsPlayerApproached == false)
         {
             _enemyAttacker.StopAttack();

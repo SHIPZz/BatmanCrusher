@@ -14,7 +14,7 @@ public class Bow : MonoBehaviour, IDistanceWeapon
     public void Shoot(Vector3 target)
     {
         _bullet.gameObject.SetActive(true);
-        _currentBullet = Instantiate(_bullet, target, Quaternion.identity);
+        _currentBullet = Instantiate(_bullet, _bullet.transform.position, Quaternion.identity);
         _bullet.gameObject.SetActive(false);
         Destroy(_currentBullet.gameObject, _delay);
         _bullet.SetDirection(target);
